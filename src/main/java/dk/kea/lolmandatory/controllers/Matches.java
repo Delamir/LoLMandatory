@@ -45,10 +45,8 @@ public class Matches {
                 if (match.getMatch_length() != 0) existingMatch.setMatch_length(existingMatch.getMatch_length());
                 if (match.getWinner() != null) existingMatch.setWinner(existingMatch.getWinner());
                 if (match.getTowers_destroyed() != 0) existingMatch.setTowers_destroyed(existingMatch.getTowers_destroyed());
-                if (match.getTeam_blue_kills() != 0) existingMatch.setTeam_blue_kills(existingMatch.getTeam_blue_kills());
-                if (match.getTeam_red_kills() != 0) existingMatch.setTeam_red_kills(existingMatch.getTeam_red_kills());
-                if (match.getTeam_blue_gold() != 0) existingMatch.setTeam_blue_gold(existingMatch.getTeam_blue_gold());
-                if (match.getTeam_red_gold() != 0) existingMatch.setTeam_red_gold(existingMatch.getTeam_red_gold());
+                if (match.getKills() != 0) existingMatch.setKills(existingMatch.getKills());
+                if (match.getGold() != 0) existingMatch.setGold(existingMatch.getGold());
 
                 matches.save(existingMatch);
                 return "Match updated";

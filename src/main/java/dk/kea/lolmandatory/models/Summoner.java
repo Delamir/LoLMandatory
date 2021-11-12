@@ -29,8 +29,8 @@ public class Summoner {
     @Column
     private SummonerType summoner_type;
 
-    @OneToOne
-    @JoinColumn(name = "match_id")
+    @ManyToOne
+    @JoinColumn(name = "champion_id")
     @Nullable
     private Champion favourite_champion;
 
@@ -38,6 +38,4 @@ public class Summoner {
     @OneToMany(mappedBy = "summoner", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Match> matches;
 
-    @Column(length = 500)
-    private String note;
 }

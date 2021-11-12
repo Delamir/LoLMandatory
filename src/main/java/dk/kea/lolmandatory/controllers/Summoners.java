@@ -47,7 +47,6 @@ public class Summoners {
                 if (summoner.getWins() != -1) existingSummoner.setWins(existingSummoner.getWins());
                 if (summoner.getLosses() != -1) existingSummoner.setLosses(existingSummoner.getLosses());
                 if (summoner.getSummoner_type() != null) existingSummoner.setSummoner_type(existingSummoner.getSummoner_type());
-                if (summoner.getNote() != null) existingSummoner.setNote(existingSummoner.getNote());
                 summoners.save(existingSummoner);
                 return "Summoner updated";
             });

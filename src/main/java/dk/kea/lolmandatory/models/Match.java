@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 
 @Data
-@Table(name="matches")
+@Table(name = "matches")
 @Entity
 public class Match {
 
@@ -27,16 +27,10 @@ public class Match {
     private int towers_destroyed;
 
     @Column
-    private int team_blue_kills;
+    private int kills;
 
     @Column
-    private int team_red_kills;
-
-    @Column
-    private int team_blue_gold;
-
-    @Column
-    private int team_red_gold;
+    private int gold;
 
     @ManyToOne
     @JoinColumn(name = "summoner_id")
