@@ -1,9 +1,10 @@
 package dk.kea.lolmandatory.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
+import org.springframework.lang.Nullable;
 import javax.persistence.*;
-import java.util.List;
+
 
 @Data
 @Table(name="matches")
@@ -37,7 +38,8 @@ public class Match {
     @Column
     private int team_red_gold;
 
-    @JsonIgnore
-    @ManyToMany(mappedBy = "matches", fetch = FetchType.LAZY)
-    private List<Summoner> summoners;
+    @ManyToOne
+    @JoinColumn(name = "summoner_id")
+    @Nullable
+    private Summoner summoner;
 }
