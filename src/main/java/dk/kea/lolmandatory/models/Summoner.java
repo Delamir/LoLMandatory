@@ -17,7 +17,7 @@ public class Summoner {
     private Long summoner_id;
 
     @Column
-    private String summoner_name;
+    private String name;
 
     @Column
     private int wins;
@@ -25,11 +25,12 @@ public class Summoner {
     @Column
     private int losses;
 
+    @Enumerated(value = EnumType.STRING)
     @Column
     private SummonerType summoner_type;
 
     @OneToOne
-    @JoinColumn(name = "champion_id")
+    @JoinColumn(name = "match_id")
     @Nullable
     private Champion favourite_champion;
 

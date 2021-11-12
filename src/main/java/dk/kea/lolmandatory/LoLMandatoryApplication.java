@@ -10,4 +10,5 @@ public class LoLMandatoryApplication {
         SpringApplication.run(LoLMandatoryApplication.class, args);
     }
 
+
 }

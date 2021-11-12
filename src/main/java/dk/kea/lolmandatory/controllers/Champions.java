@@ -23,14 +23,14 @@ public class Champions {
 
     @PostMapping("/champions")
     public Champion createChampion(@RequestBody Champion champion) {
-        champion.setChampion_id(null);
+        champion.setId(null);
         return champions.save(champion);
     }
 
     @PutMapping("/champions/{id}")
     public void putChampion(@PathVariable Long id, @RequestBody Champion champion) {
         try {
-            champion.setChampion_id(id);
+            champion.setId(id);
             champions.save(champion);
         } catch (Exception e) {
             System.out.println("Champion does not exist");

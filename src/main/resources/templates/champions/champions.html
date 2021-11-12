@@ -3,10 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/static/stylesheet.css">
+    <script src="../global.js"></script>
     <script src="../lib/HTMLEscape.js"></script>
     <title>Champion</title>
 </head>
 <body>
+
+<div class="topmenu">
+    <a href="../dashboard/dashboard.html">Dashboard</a>
+    <a href="../summoners/summoners.html">Summoners</a>
+    <a class=active href="../champions/champions.html">Champions</a>
+</div>
+
+<button id="show-create-champion-form" style="margin-top: 70px">Add Champion</button>
+<div id="create-champion-form"></div>
+
+<table id="champion-table">
+    <thead>
+        <tr>
+            <th style="cursor: pointer" onclick="sortTable(0)">Champion</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody id="champion-tbody">
+
+    </tbody>
+</table>
+
+
 
 <script src="./champions.js"></script>
 </body>

@@ -11,7 +11,7 @@ public class Champion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
-    private Long champion_id;
+    private Long id;
 
     @Column(length = 20)
     private String name;

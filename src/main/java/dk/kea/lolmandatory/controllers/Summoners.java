@@ -43,7 +43,7 @@ public class Summoners {
 
         try {
             summoners.findById(id).map(existingSummoner -> {
-                if (summoner.getSummoner_name() != null) existingSummoner.setSummoner_name(summoner.getSummoner_name());
+                if (summoner.getName() != null) existingSummoner.setName(summoner.getName());
                 if (summoner.getWins() != -1) existingSummoner.setWins(existingSummoner.getWins());
                 if (summoner.getLosses() != -1) existingSummoner.setLosses(existingSummoner.getLosses());
                 if (summoner.getSummoner_type() != null) existingSummoner.setSummoner_type(existingSummoner.getSummoner_type());
