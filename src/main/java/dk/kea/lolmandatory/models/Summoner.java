@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.lang.Nullable;
 import javax.persistence.*;
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Data
@@ -14,7 +16,7 @@ public class Summoner {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
-    private Long summoner_id;
+    private Long id;
 
     @Column
     private String name;
@@ -25,14 +27,13 @@ public class Summoner {
     @Column
     private int losses;
 
-    @Enumerated(value = EnumType.STRING)
     @Column
-    private SummonerType summoner_type;
+    private String summonerType;
 
     @ManyToOne
     @JoinColumn(name = "champion_id")
     @Nullable
-    private Champion favourite_champion;
+    private Champion favouriteChampion;
 
     @JsonIgnore
     @OneToMany(mappedBy = "summoner", fetch = FetchType.LAZY, cascade = CascadeType.ALL)

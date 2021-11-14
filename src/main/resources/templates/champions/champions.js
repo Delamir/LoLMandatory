@@ -8,10 +8,11 @@ const createChampionForm = `<div style="margin-top: 100px">
         <button onclick="removeCreateChampionForm()" ">Cancel</button>
     </div>`;
 
-fetch(baseURL + "/champions").then(response => response.json())
-.then(champions => {
-    champions.map(createChampionTableRow);
-});
+fetch(baseURL + "/champions")
+    .then(response => response.json())
+    .then(champions => {
+        champions.map(createChampionTableRow);
+    });
 
 //Show form for create champion
 document.getElementById("show-create-champion-form")
@@ -22,7 +23,7 @@ function showCreateChampionForm() {
     championParentDiv.innerHTML = createChampionForm;
 }
 
-function removeCreateChampionForm () {
+function removeCreateChampionForm() {
     createChampionButton.style.display = "block";
     championParentDiv.innerHTML = "";
 }
@@ -34,11 +35,11 @@ function createChampion() {
 
     fetch(baseURL + "/champions", {
         method: "POST",
-        headers: { "Content-type": "application/json; charset=UTF-8" },
+        headers: {"Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify(championToCreate)
     }).then(response => response.json()).then(champion => {
-            removeCreateChampionForm();
-            createChampionTableRow(champion);
+        removeCreateChampionForm();
+        createChampionTableRow(champion);
     }).catch(error => console.log(error));
 }
 
@@ -53,7 +54,7 @@ function createChampionTableRow(champion) {
 function constructChampionTableRow(tableRow, champion) {
     tableRow.innerHTML = `
         <td>
-            <p id="name-row">${escapeHTML(champion.name)}</p>
+            <p id="champion-name-row">${escapeHTML(champion.name)}</p>
         </td>
         <td>
             <button id="champion-update-${champion.id}">Update</button>        
@@ -124,7 +125,7 @@ function updateChampionBackend(championId) {
 
     fetch(baseURL + "/champions/" + championId, {
         method: "PATCH",
-        headers: { "Content-type": "application/json; charset=UTF-8" },
+        headers: {"Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify(championToUpdate)
     }).then(response => {
         if (response.status === 200) {

@@ -3,7 +3,7 @@ package dk.kea.lolmandatory.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Table(name="champions")
@@ -19,6 +19,6 @@ public class Champion {
     private String name;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "favourite_champion", fetch = FetchType.LAZY)
-    private Set<Summoner> summoners;
+    @OneToMany(mappedBy = "favouriteChampion", fetch = FetchType.LAZY)
+    private List<Summoner> summoners;
 }

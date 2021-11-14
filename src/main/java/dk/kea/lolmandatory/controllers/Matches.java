@@ -24,14 +24,14 @@ public class Matches {
 
     @PostMapping("/matches")
     public Match createChampion(@RequestBody Match match) {
-        match.setMatch_id(null);
+        match.setId(null);
         return matches.save(match);
     }
 
     @PutMapping("/matches/{id}")
     public void putChampion(@PathVariable Long id, @RequestBody Match match) {
         try {
-            match.setMatch_id(id);
+            match.setId(id);
             matches.save(match);
         } catch (Exception e) {
             System.out.println("Match does not exist");

@@ -14,7 +14,7 @@ public class Match {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
-    private Long match_id;
+    private Long id;
 
     @Column
     private int match_length;

@@ -2,6 +2,7 @@ package dk.kea.lolmandatory.controllers;
 
 import dk.kea.lolmandatory.models.Champion;
 import dk.kea.lolmandatory.repositories.ChampionRepository;
+import dk.kea.lolmandatory.repositories.SummonerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,9 @@ public class Champions {
 
     @Autowired
     ChampionRepository champions;
+
+    @Autowired
+    SummonerRepository summoners;
 
     @GetMapping("/champions")
     public Iterable<Champion> getChampions() {
