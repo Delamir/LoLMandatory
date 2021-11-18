@@ -120,7 +120,7 @@ function updateSummonerBackend(summonerId) {
 
     fetch(baseURL + "/summoners/" + summonerId, {
         method: "PATCH",
-        headers: { "Content-type": "application/json; charset=UTF-8" },
+        headers: { "Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify(summonerToUpdate)
     }).then(response => {
         if (response.status === 200) {

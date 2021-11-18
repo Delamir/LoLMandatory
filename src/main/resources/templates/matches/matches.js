@@ -222,7 +222,7 @@ function updateMatchBackend(matchId) {
 
     fetch(baseURL + "/matches/" + matchId , {
         method: "PATCH",
-        headers: { "Content-type": "application/json; charset=UTF-8" },
+        headers: { "Content-type": "application/json; charset=UTF-8"},
         body: JSON.stringify(matchToUpdate)
     }).then(response => {
         if (response.status === 200) {

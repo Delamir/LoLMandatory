@@ -125,7 +125,8 @@ function updateChampionBackend(championId) {
 
     fetch(baseURL + "/champions/" + championId, {
         method: "PATCH",
-        headers: {"Content-type": "application/json; charset=UTF-8"},
+        headers: {"Content-type": "application/json; charset=UTF-8",
+            "Access-Control-Allow-Origin": "*"},
         body: JSON.stringify(championToUpdate)
     }).then(response => {
         if (response.status === 200) {
