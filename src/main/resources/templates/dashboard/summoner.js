@@ -17,9 +17,7 @@ function createSummonerTableRow(summoner) {
 function constructSummonerTableRow(tableRow, summoner) {
     tableRow.innerHTML = `
         <td>
-            <a href="../matches/matches.html">
-                <p id="summoner-name-row">${escapeHTML(summoner.name)}</p>
-            </a>    
+            <p id="summoner-name-row">${escapeHTML(summoner.name)}</p>          
         </td>
         <td>
             <p id="summoner-wins-row">${escapeHTML(summoner.wins.toString())}</p>

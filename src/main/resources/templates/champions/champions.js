@@ -3,9 +3,9 @@ const championParentDiv = document.getElementById("create-champion-form");
 const createChampionButton = document.getElementById("show-create-champion-form");
 const createChampionForm = `<div style="margin-top: 100px">
         <label>Champion</label>
-        <input type="text" id="create-champion-name" required>
+        <input type="text" id="create-champion-name">
         <button onclick="createChampion()">Add</button>
-        <button onclick="removeCreateChampionForm()" ">Cancel</button>
+        <button onclick="removeCreateChampionForm()">Cancel</button>
     </div>`;
 
 fetch(baseURL + "/champions")
@@ -132,4 +132,21 @@ function updateChampionBackend(championId) {
             constructChampionTableRow(tableRowToUpdate, championToUpdate)
         }
     });
+}
+
+function search() {
+    let input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("champ-search");
+    filter = input.value.toUpperCase();
+    ul = championTbody;
+    li = ul.getElementsByTagName("tr");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("p")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 }

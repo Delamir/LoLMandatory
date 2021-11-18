@@ -19,9 +19,8 @@ public class Match {
     @Column
     private int match_length;
 
-    @Enumerated(value = EnumType.STRING)
     @Column
-    private Team winner;
+    private String winner;
 
     @Column
     private int towers_destroyed;
@@ -35,5 +34,5 @@ public class Match {
     @ManyToOne
     @JoinColumn(name = "summoner_id")
     @Nullable
-    private Summoner summoner;
+    private Summoner summonerMatch;
 }

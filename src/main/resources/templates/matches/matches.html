@@ -11,10 +11,31 @@
 
 <div class="topmenu">
     <a href="../dashboard/dashboard.html">Dashboard</a>
+    <a class=active href="../matches/matches.html">Matches</a>
     <a href="../champions/champions.html">Champions</a>
+    <a href="../login/login.html">Log In</a>
 </div>
 
-<h1 style="margin-top: 200px">MATCHES</h1>
+<button id="show-create-match-form" style="margin-top: 70px">Add Match</button>
+<div id="create-match-form"></div>
+
+<table id="match-table">
+    <thead>
+    <tr>
+        <th>Length</th>
+        <th>Winner</th>
+        <th>Towers</th>
+        <th>Kills</th>
+        <th>Gold</th>
+        <th>Summoner</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody id="match-tbody">
+
+    </tbody>
+</table>
 
 <script src="./matches.js"></script>
 </body>

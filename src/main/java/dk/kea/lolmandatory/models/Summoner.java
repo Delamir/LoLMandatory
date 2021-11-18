@@ -36,7 +36,7 @@ public class Summoner {
     private Champion favouriteChampion;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "summoner", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "summonerMatch", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Match> matches;
 
 }
