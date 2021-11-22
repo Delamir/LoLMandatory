@@ -196,30 +196,6 @@ function updateMatchBackend(matchId) {
         }
     }
 
-    console.log(document.getElementById(`summoner-match-row-${matchId}`).value);
-
-    /*
-    console.log(document.getElementById(`update-match-length-${matchId}`).value);
-
-    console.log(document.getElementById(`update-winner-${matchId}`).value);
-    console.log(document.getElementById(`update-towers-destroyed-${matchId}`).value);
-    console.log(document.getElementById(`update-kills-${matchId}`).value);
-    console.log(document.getElementById(`update-gold-${matchId}`).value);
-    console.log(document.getElementById(`summoner-match-row-${matchId}`).value);
-
-
-    console.log(document.getElementById(`summoner-match-row-${matchId}`).name);
-    console.log(document.getElementById(`summoner-match-row-${matchId}`).wins);
-    console.log(document.getElementById(`summoner-match-row-${matchId}`).losses);
-    console.log(document.getElementById(`summoner-match-row-${matchId}`).summonerType);
-    console.log(document.getElementById(`summoner-match-row-${matchId}`).favouriteChampion);
-    */
-
-
-
-
-
-
     fetch(baseURL + "/matches/" + matchId , {
         method: "PATCH",
         headers: { "Content-type": "application/json; charset=UTF-8"},
